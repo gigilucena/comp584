@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="hw2.js"></script>
+</head>
+<body>
+ <form  method="post" id="theForm">
+
+       <fieldset>
+         <legend>Add an Employee</legend>
+
+             <label for="input_firstname">First name:</label>
+          <input type="text" name="firstname" id="firstname"
+                  autofocus accesskey="F" required tabindex=0><br>
+
+          <label for="input_lastname">Last name:</label>
+          <input type="text" name="lastname" id="lastname" accesskey="L" tabindex=1><br>
+
+          <label for="input_department">Department:</label>
+          <select id="department" name="department">
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Business">Business</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+          </select> <br>
+
+          <input type="button" name="submit" id="button"
+                             value="submit" onclick="add()">
+
+
+        </fieldset>
+    </form>
+
+    <h2>Employee added</h2>
+
+    <div id="name">Name: </div>
+    <div id="department_div">Department: </div>
+    <div id="employeeId">Employee Id:</div>
+    <div id="date">Hired date:</div>
+    <div id="totalEmployee">Total Employees:</div>
+    <div id="test"></div>
+    <div id="gigi"></div>
+
+
+</body>
+</html>
