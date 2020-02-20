@@ -1,7 +1,5 @@
 <?php
-    //FILE: js_php.php
-
-    $json = $_POST["json"];
+    $json = $_POST['json'];
 
     $info = json_encode($json);
 
@@ -13,10 +11,10 @@
         mkdir($folderPath);
     }
 
-    $file = @fopen($folderPath . DIRECTORY_SEPARATOR . $filename,"w");
+    $file = @fopen($folderPath . DIRECTORY_SEPARATOR . $filename,"a");
     if ($file != false){
         fwrite($file,$info);
-        echo " data successfully entered";
+        echo " data successfully ";
         fclose($file);
     }
 

@@ -35,38 +35,46 @@ function add() {
   total = total+1;
   document.getElementById("totalEmployee").textContent = "Total Employees: "+total;
 
-  employees.push({
+  document.getElementById("browser").textContent = "Browser in use: "+navigator.appName
+
+
+  var employee = {
        firstname: firstname,
        lastname: lastname,
-       department: department,
+       department: document.getElementById("department").value,
        id: employeeId,
-       dateHired: dateHired
-   });
+       dateHired: today
+   }
+  employees.push(employee);
 
-   send_to_php(employees)
+   console.log(employee)
+   console.log(navigator.appName)
+
+   send_to_php(employee)
 
 }
 
-function send_to_php(employees) {
+function send_to_php(employee) {
+
         $.ajax({
             url: '/hw2/hw2.php',
             type: 'POST',
-            // json
-            data: {json: JSON.stringify(employees)},
-            dataType: 'json',
+            dataType : 'json',
+            data: {json:JSON.stringify(employee)},
             success: function (data) {
-                document.getElementById("gigi").textContent = "HELLO"
+                document.getElementById("browser").textContent = "SUCESSS";
                 //var obj = JSON.parse(data);
-                //$("#test").val( obj.result );
+                console.log('sucess')
             },
             error: function (data) {
-                console.log(data);
+                console.log('error ');
             },
             complete: function () {
 
             },
             cache: false,
-            contentType: false,
+            contentType: "application/json",
             processData: false
         });
+
 }
