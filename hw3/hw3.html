@@ -49,6 +49,7 @@
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
   d3.csv("data/unemployment_2005_2019.csv", function(error, data) {
     if (error) throw error;
     console.log(data);
@@ -60,6 +61,11 @@
 
     x.domain(d3.extent(data, function(d) { return d.date; }));
     y.domain(d3.extent(data, function(d) { return d.rate; }));
+
+    svg.append("text")
+        .style("font-size", "40px")
+        .style(" padding-bottom", "40px")
+        .text("Homework Three");
 
     svg.append("g")
         .attr("class", "x axis")
